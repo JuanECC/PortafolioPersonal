@@ -1,354 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Elias Corona Cuevas | Desarrollador Frontend</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="Portafolio de Juan Elias Corona Cuevas - Desarrollador Frontend especializado en interfaces web modernas y responsivas">
-    <link rel="stylesheet" href="./src/css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Portafolio de Juan Elías Corona Cuevas. Desarrollo web, interfaces, aplicaciones full stack y proyectos como MiTurno, La Casa del Globo y S / Split.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Juan Elías | Desarrollador web">
+  <meta property="og:description" content="Ideas convertidas en software útil. Explora mis proyectos y tecnologías.">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./main.js" defer></script>
+  <title>Juan Elías Corona Cuevas — Desarrollador web</title>
 </head>
 <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
-    <header class="site-header" id="top">
-        <nav class="navbar container" aria-label="Navegación principal">
-            <a href="#inicio" class="navbar__logo" aria-label="Ir a inicio">
-                <img src="./src/img/logo.png" alt="Logo de Juan Elias">
-                <span>Juan</span>
-                <span class="brand-dot">Elias</span>
-            </a>
-            
-            <div class="nav__actions">
-                <ul class="nav__menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-                
-                <!-- Botón para cambiar tema -->
-                <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
-                <a href="#contacto" class="nav__cta">
-                    <i class="fas fa-paper-plane"></i>
-                    Hablemos
-                </a>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Juan Elías, inicio"><span class="brand__symbol">JE<span>.</span></span><span class="brand__descriptor">developer<br>portfolio</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#inicio" class="nav-link is-active">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+        <li><a href="#recursos" class="nav-link">Recursos</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="nav__controls">
+        <button type="button" class="icon-button theme-toggle" id="themeToggle" aria-label="Activar modo claro" title="Cambiar tema">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1a9 9 0 1 0 10 10z"/></svg>
+        </button>
+        <a href="#contacto" class="nav__cta">Hablemos <span aria-hidden="true">↗</span></a>
+        <button type="button" class="icon-button nav__toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
 
-                <button class="nav__toggle" id="navToggle"
-                    aria-expanded="false" aria-controls="mobilePanel"
-                    aria-label="Abrir menú">
-                    <span class="sr-only">Abrir menú</span>
-                    <span class="burger" aria-hidden="true"></span>
-                </button>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+      <div class="hero__glow hero__glow--one" aria-hidden="true"></div><div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+      <div class="container hero__layout">
+        <div class="hero__copy">
+          <div class="eyebrow hero__eyebrow"><span class="status-dot" aria-hidden="true"></span> MI ESPACIO EN INTERNET <span class="eyebrow-divider">/</span> 2026</div>
+          <h1 id="heroTitle">Hola, soy <span class="hero__name">Juan Elías.</span><br><span class="hero__line">Transformo ideas en <em>software.</em></span></h1>
+          <p class="hero__description">Desarrollador web y estudiante de <strong>Ingeniería en Sistemas Computacionales</strong>. Me gusta crear aplicaciones que combinan buenas interfaces, lógica sólida y soluciones a problemas reales.</p>
+          <div class="hero__actions">
+            <a href="#proyectos" class="button button--primary">Explorar proyectos <svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+            <a href="#contacto" class="button button--outline">Contactarme <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero__meta">
+            <div class="social-row">
+              <a class="social-link" href="https://github.com/JuanECC" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Juan Elías">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="social-link" href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Juan Elías">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a class="social-link" href="mailto:JuanECC2005@icloud.com" aria-label="Enviar correo a Juan Elías">Email <span aria-hidden="true">↗</span></a>
+              <a class="social-link" href="https://wa.me/522941055499" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Juan Elías">WhatsApp <span aria-hidden="true">↗</span></a>
             </div>
-
-            <div class="nav__panel" id="mobilePanel" hidden>
-                <ul class="nav__panelList">
-                    <li><a href="#inicio" class="panel-link">Inicio</a></li>
-                    <li><a href="#sobre-mi" class="panel-link">Sobre mí</a></li>
-                    <li><a href="#proyectos" class="panel-link">Proyectos</a></li>
-                    <li><a href="#contacto" class="panel-link">Contacto</a></li>
-                    <li class="panel-divider"></li>
-                    <li><button id="themeToggleMobile" class="panel-theme-toggle">
-                        <i class="fas fa-moon"></i> Modo claro
-                    </button></li>
-                    <li><a class="panel-cta" href="#contacto">Hablemos</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main id="contenido">
-        <!-- HERO SECTION -->
-        <section id="inicio" class="hero">
-            <div class="hero__content container">
-                <div class="hero__text">
-                    <h1>Hola, soy <span class="highlight">Juan Elias</span></h1>
-                    <p class="hero__subtitle">Desarrollador Frontend especializado en crear interfaces web <span class="highlight-text">modernas, responsivas y accesibles</span></p>
-                    <div class="hero__buttons">
-                        <a href="#proyectos" class="btn btn-primary">
-                            <i class="fas fa-code"></i> Ver proyectos
-                        </a>
-                        <a href="#contacto" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> Contáctame
-                        </a>
-                    </div>
-                    <div class="hero__social">
-                        <a href="https://github.com/JuanECC" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:gatospro2000@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero__image">
-                    <!-- Aquí iría tu foto -->
-                    <div class="profile-image">
-                        <div class="profile-image__wrapper">
-                            <img src="./src/img/yo.jpg" alt="Foto de Juan Elias Corona Cuevas" class="profile-photo">
-                            <div class="profile-badge">
-                                <i class="fas fa-code"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-indicator">
-                <a href="#sobre-mi" aria-label="Ir a la siguiente sección">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- SOBRE MÍ SECTION -->
-        <section id="sobre-mi" class="section">
-            <div class="container">
-                <h2>Sobre <span class="highlight">mí</span></h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>¡Hola! Soy <strong>Juan Elias Corona Cuevas</strong>, desarrollador frontend con pasión por crear experiencias web que sean tanto hermosas como funcionales.</p>
-                        
-                        <p>Mi viaje en el desarrollo web comenzó con la curiosidad por entender cómo funcionan los sitios web que uso todos los días. Desde entonces, me he sumergido en el mundo del código, aprendiendo constantemente y mejorando mis habilidades.</p>
-                        
-                        <p>Me encanta transformar ideas en interfaces interactivas que no solo se vean bien, sino que también sean intuitivas y accesibles para todos los usuarios.</p>
-                        
-                        <div class="skills-preview">
-                            <h3>Habilidades principales:</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">Responsive Design</span>
-                                <span class="skill-tag">Git</span>
-                            </div>
-                        </div>
-                        
-                        <a href="./src/assets/cv-juan-elias.pdf" class="btn btn-primary" download>
-                            <i class="fas fa-download"></i> Descargar CV
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROYECTOS SECTION -->
-        <section id="proyectos" class="section projects">
-            <div class="container">
-                <h2>Mis <span class="highlight">proyectos</span></h2>
-                <p class="section-subtitle">Algunos de los proyectos en los que he trabajado</p>
-                
-                <div class="projects-grid">
-                    <!-- Proyecto 1: Portafolio Web -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="./src/img/proyecto1.jpg" alt="Captura del portafolio web">
-                        </div>
-                        <div class="project-content">
-                            <h3>Portafolio Web Personal</h3>
-                            <p>Mi propio portafolio web desarrollado con HTML5, CSS3 y JavaScript. Diseño completamente responsivo y accesible.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Responsive</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://juanecc.github.io/Proyecto_Final1/" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Ver en vivo
-                                </a>
-                                <a href="https://github.com/JuanECC/Proyecto_Final1" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> Código
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Proyecto 2: App MiTurno -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="./src/img/proyecto2.jpg" alt="Captura de la app MiTurno">
-                        </div>
-                        <div class="project-content">
-                            <h3>App MiTurno (Triage)</h3>
-                            <p>Aplicación web para gestión de turnos basada en sistema de triage. Desarrollada como parte de un proyecto académico.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://juanecc.github.io/miturno/" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Ver demo
-                                </a>
-                                <a href="https://github.com/JuanECC/miturno" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> Código
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Proyecto 3: Próximo proyecto -->
-                    <div class="project-card">
-                        <div class="project-image coming-soon">
-                            <div class="coming-soon-text">
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Próximamente</span>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Nuevo Proyecto</h3>
-                            <p>Actualmente trabajando en un nuevo proyecto que combinará mis habilidades en desarrollo frontend con nuevas tecnologías.</p>
-                            <div class="project-tech">
-                                <span>En desarrollo</span>
-                                <span>Próximamente</span>
-                            </div>
-                            <div class="project-links">
-                                <button class="project-link disabled" disabled>
-                                    <i class="fas fa-clock"></i> En proceso
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACTO SECTION -->
-        <section id="contacto" class="section contact">
-            <div class="container">
-                <h2>Contácta<span class="highlight">me</span></h2>
-                <p class="section-subtitle">¿Tienes un proyecto o idea? ¡Hablemos sobre ello!</p>
-                
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3>Email</h3>
-                                <p>JuanECC2005@icloud.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Ubicación</h3>
-                                <p>México</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-social">
-                            <h3>Conéctate conmigo</h3>
-                            <div class="social-icons">
-                                <a href="https://github.com/JuanECCC" target="_blank" class="social-icon">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank" class="social-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="http://x.com/JECC_05" target="_blank" class="social-icon">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                </a>
-                                <a href="https://wa.me/2941055499" target="_blank" class="social-icon" aria-label="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Enviar mensaje
-                        </button>
-                        
-                        <div class="form-message" id="formMessage"></div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer" id="terminos">
-        <div class="container">
-            <div class="footer__cols">
-                <div>
-                    <h3>Juan.ECC</h3>
-                    <p>Desarrollador web frontend</p>
-                </div>
-
-                <div>
-                    <h4>Navegación</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-mi">Sobre mí</a></li>
-                        <li><a href="#proyectos">Proyectos</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#terminos">Términos y condiciones</a></li>
-                        <li><a href="#privacidad">Política de privacidad</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Sígueme</h4>
-                    <ul>
-                        <li><a href="https://github.com/JuanECC" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://www.instagram.com/juan_ecc05/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <small>&copy; 2025 Juan Elias. Todos los derechos reservados.</small>
-            <small class="footer-credit">Hecho con <i class="fas fa-heart"></i> y código</small>
+            <span class="hero__location"><span aria-hidden="true">⌁</span> Desde México</span>
+          </div>
         </div>
-    </footer>
+        <div class="hero__showcase" aria-label="Ilustración de un editor de código">
+          <div class="orbit orbit--one" aria-hidden="true"></div><div class="orbit orbit--two" aria-hidden="true"></div>
+          <div class="editor-card">
+            <div class="editor__head"><div class="editor__dots"><i></i><i></i><i></i></div><span>portfolio / main.jsx</span><span class="editor__head-icon">⌘</span></div>
+            <div class="editor__body" aria-hidden="true">
+              <div class="code-line"><span class="code-num">01</span><span><span class="syntax-violet">const</span> <span class="syntax-blue">developer</span> = {</span></div>
+              <div class="code-line"><span class="code-num">02</span><span class="indent"><span class="syntax-pink">name</span>: <span class="syntax-green">'Juan Elías'</span>,</span></div>
+              <div class="code-line"><span class="code-num">03</span><span class="indent"><span class="syntax-pink">role</span>: <span class="syntax-green">'Web Developer'</span>,</span></div>
+              <div class="code-line"><span class="code-num">04</span><span class="indent"><span class="syntax-pink">focus</span>: [</span></div>
+              <div class="code-line"><span class="code-num">05</span><span class="indent double"><span class="syntax-green">'Frontend'</span>,</span></div>
+              <div class="code-line"><span class="code-num">06</span><span class="indent double"><span class="syntax-green">'Backend'</span>,</span></div>
+              <div class="code-line"><span class="code-num">07</span><span class="indent double"><span class="syntax-green">'Real solutions'</span></span></div>
+              <div class="code-line"><span class="code-num">08</span><span class="indent">],</span></div>
+              <div class="code-line"><span class="code-num">09</span><span class="indent"><span class="syntax-pink">curiosity</span>: <span class="syntax-orange">Infinity</span></span></div>
+              <div class="code-line"><span class="code-num">10</span><span>};</span></div>
+              <div class="code-line"><span class="code-num">11</span><span class="syntax-muted">// build something meaningful_</span><span class="code-cursor"></span></div>
+            </div>
+            <div class="editor__foot"><span><i class="status-dot status-dot--small"></i> All systems ready</span><span>JavaScript · UTF-8</span></div>
+          </div>
+          <div class="float-card float-card--react"><span class="float-icon float-icon--react">⚛</span><span>React<br><small>UI Components</small></span></div>
+          <div class="float-card float-card--deploy"><span class="float-icon float-icon--deploy">✓</span><span>Build complete<br><small>Ready to deploy</small></span></div>
+        </div>
+      </div>
+      <div class="hero__bottom container"><span><span class="hero__bottom-line"></span> SCROLL PARA EXPLORAR</span><a href="#sobre-mi" class="scroll-pill" aria-label="Ir a Sobre mí">↓</a><span class="hero__bottom-right">DESARROLLO + DISEÑO + CURIOSIDAD</span></div>
+    </section>
 
-    <div class="cookie-banner" id="cookie-banner">
-        <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario.
-            <a href="#privacidad">Más información</a>
-        </p>
-        <button id="cookieBtn" class="btn btn-small">Aceptar</button>
+    <div class="tech-strip" aria-label="Tecnologías principales"><div class="container tech-strip__inner"><span class="tech-strip__label">MI STACK PRINCIPAL</span><span>React</span><span>JavaScript</span><span>Node.js</span><span>Firebase</span><span>MongoDB</span><span>Tailwind CSS</span></div></div>
+
+    <section class="section about" id="sobre-mi" aria-labelledby="aboutTitle">
+      <div class="container">
+        <div class="section-header reveal"><div class="section-index"><span>01 /</span> UN POCO DE MÍ</div><h2 id="aboutTitle">Más que escribir código,<br><span class="text-gradient">me gusta resolver problemas.</span></h2></div>
+        <div class="about__grid">
+          <div class="about__portrait reveal">
+            <div class="portrait-frame">
+              <div class="portrait-art" id="portraitFallback" aria-hidden="true">
+                <span class="portrait-art__grid"></span>
+                <svg class="portrait-art__avatar" viewBox="0 0 240 240" fill="none" aria-hidden="true"><circle cx="120" cy="81" r="42" stroke="currentColor" stroke-width="2"/><path d="M37 209c0-45 37-81 83-81s83 36 83 81" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="120" r="103" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="3 9"/></svg>
+                <span class="portrait-art__caption">FOTOGRAFÍA PERSONAL <span class="portrait-art__caption-dot">✳</span></span>
+              </div>
+              <img src="./src/img/yo.jpg" alt="Fotografía de Juan Elías Corona Cuevas" id="portraitImage" loading="eager" hidden>
+              <span class="portrait-corner portrait-corner--tl"></span><span class="portrait-corner portrait-corner--br"></span>
+            </div>
+            <div class="portrait-footnote"><span class="status-dot"></span> Siempre aprendiendo algo nuevo <span aria-hidden="true">✳</span></div>
+          </div>
+          <div class="about__text reveal">
+            <p class="about__lead">Soy <strong>Juan Elías Corona Cuevas</strong>, estudiante de Ingeniería en Sistemas Computacionales con interés en el <em>desarrollo web full stack</em> y la creación de productos digitales.</p>
+            <p>Empecé creando páginas con HTML y CSS. Hoy trabajo con React, servicios backend, bases de datos y herramientas de despliegue. Mis proyectos han pasado de interfaces personales a soluciones para salud, comercio y actividad física.</p>
+            <p>Disfruto aprender cómo funciona todo el sistema: desde la primera pantalla que ve el usuario hasta la información que se almacena detrás.</p>
+            <div class="about__principles">
+              <div><span class="principle-num">01.</span><div><strong>Diseño con propósito</strong><small>Interfaces claras y adaptables.</small></div></div>
+              <div><span class="principle-num">02.</span><div><strong>Desarrollo funcional</strong><small>Del frontend a las APIs y los datos.</small></div></div>
+              <div><span class="principle-num">03.</span><div><strong>Aprendizaje continuo</strong><small>Curiosidad, práctica y mejora constante.</small></div></div>
+            </div>
+            <a href="#habilidades" class="text-link">Conoce mis habilidades <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="proyectos" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-header section-header--split reveal"><div><div class="section-index"><span>02 /</span> PORTAFOLIO DE PROYECTOS</div><h2 id="projectsTitle">Proyectos que <span class="text-gradient">hablan por mí.</span></h2></div><p>Tres soluciones en contextos distintos: salud, comercio y deporte. Cada una me ha enseñado algo nuevo.</p></div>
+        <div class="projects__grid">
+          <article class="project project--featured reveal" aria-labelledby="miturnoTitle">
+            <div class="project__visual visual-miturno" aria-label="Vista conceptual de una interfaz de priorización de pacientes">
+              <div class="mock-window mock-window--miturno">
+                <div class="mock-bar"><span class="mock-logo"><span class="mock-logo__cross">✚</span> MiTurno</span><span class="mock-bar__chips">● Sistema de atención</span></div>
+                <div class="miturno-layout"><div class="mock-side"><span class="side-line selected"></span><span class="side-line"></span><span class="side-line"></span><span class="side-line"></span><span class="side-line short"></span></div><div class="miturno-main"><span class="mini-label">Panel de pacientes</span><div class="miturno-statrow"><div><small>En espera</small><strong>12</strong></div><div><small>En consulta</small><strong>04</strong></div><div><small>Prioridad alta</small><strong>02</strong></div></div><div class="miturno-table"><div class="miturno-row miturno-row--head"><span>PACIENTE</span><span>TRIAJE</span><span>ESTADO</span></div><div class="miturno-row"><span><i class="patient-dot"></i> Paciente 001</span><span><b class="triage-badge triage-badge--red">N1</b></span><span class="state-cell">Atención</span></div><div class="miturno-row"><span><i class="patient-dot"></i> Paciente 002</span><span><b class="triage-badge triage-badge--orange">N2</b></span><span class="state-cell">En espera</span></div><div class="miturno-row"><span><i class="patient-dot"></i> Paciente 003</span><span><b class="triage-badge triage-badge--yellow">N3</b></span><span class="state-cell">En espera</span></div></div></div></div>
+              </div><div class="visual-noise" aria-hidden="true"></div>
+            </div>
+            <div class="project__info"><div class="project__topline"><span class="project__number">PROYECTO / 01</span><span class="project__domain">HEALTH TECH</span></div><h3 id="miturnoTitle">MiTurno <span aria-hidden="true">↗</span></h3><p>Sistema para organizar la atención hospitalaria mediante triaje, gestión de pacientes y seguimiento del flujo clínico. Un proyecto que explora cómo la tecnología y la IA pueden apoyar procesos de salud.</p><div class="tags"><span>React</span><span>Vite</span><span>Firebase</span><span>IA</span><span>PWA</span></div><div class="project__actions"><button type="button" class="project__detail-button" data-project="miturno" aria-label="Ver más sobre MiTurno" aria-haspopup="dialog" aria-controls="projectDialog">Ver más <span aria-hidden="true">↗</span></button></div></div>
+          </article>
+          <article class="project reveal" aria-labelledby="posTitle">
+            <div class="project__visual visual-pos" aria-label="Vista conceptual de interfaz de punto de venta">
+              <div class="pos-dashboard"><div class="pos-head"><span>🎈 <strong>La Casa del Globo</strong></span><span>Panel de ventas</span></div><div class="pos-metrics"><div><small>Ventas de hoy</small><strong>$ 2,450</strong><span class="pos-growth">↗ +12.5%</span></div><div><small>Pedidos</small><strong>08</strong><span>En seguimiento</span></div></div><div class="pos-lines"><div><span class="pos-color pos-color--one"></span><span>Decoración</span><b>$850</b></div><div><span class="pos-color pos-color--two"></span><span>Globos</span><b>$640</b></div><div><span class="pos-color pos-color--three"></span><span>Accesorios</span><b>$280</b></div></div></div>
+            </div>
+            <div class="project__info"><div class="project__topline"><span class="project__number">PROYECTO / 02</span><span class="project__domain">COMERCIO</span></div><h3 id="posTitle">La Casa del Globo <span aria-hidden="true">↗</span></h3><p>Sistema POS con ventas, inventario, pedidos personalizados, clientes, reportes y tickets. Pensado para facilitar el trabajo diario de un negocio real.</p><div class="tags"><span>React</span><span>Tailwind</span><span>Firestore</span><span>Firebase Auth</span></div><div class="project__actions"><button type="button" class="project__detail-button" data-project="pos" aria-label="Ver más sobre La Casa del Globo" aria-haspopup="dialog" aria-controls="projectDialog">Ver más <span aria-hidden="true">↗</span></button></div></div>
+          </article>
+          <article class="project reveal" aria-labelledby="splitTitle">
+            <div class="project__visual visual-split" aria-label="Vista conceptual de una aplicación de actividad física">
+              <div class="split-dashboard"><div class="split-head"><span class="split-icon">S<span>/</span></span><strong>S / Split</strong><span class="split-head__extra">ACTIVITY</span></div><div class="split-title">Tu actividad, en un solo lugar.</div><div class="split-chart"><div style="--bar:42%"><span></span><small>L</small></div><div style="--bar:75%"><span></span><small>M</small></div><div style="--bar:55%"><span></span><small>M</small></div><div style="--bar:88%"><span></span><small>J</small></div><div style="--bar:63%"><span></span><small>V</small></div><div style="--bar:96%"><span></span><small>S</small></div><div style="--bar:50%"><span></span><small>D</small></div></div><div class="split-foot"><span>Seguimiento de actividad</span><span>● ● ●</span></div></div>
+            </div>
+            <div class="project__info"><div class="project__topline"><span class="project__number">PROYECTO / 03</span><span class="project__domain">FITNESS TECH</span></div><h3 id="splitTitle">S / Split <span aria-hidden="true">↗</span></h3><p>Aplicación para registrar actividades deportivas, consultar información y explorar una experiencia de chat deportivo conectada a un backend.</p><div class="tags"><span>React</span><span>Vite</span><span>Node.js</span><span>Express</span><span>Firebase</span></div><div class="project__actions"><button type="button" class="project__detail-button" data-project="split" aria-label="Ver más sobre S / Split" aria-haspopup="dialog" aria-controls="projectDialog">Ver más <span aria-hidden="true">↗</span></button></div></div>
+          </article>
+        </div>
+        <div class="projects__more reveal"><span>Explora las funciones, tecnologías y capturas de cada solución mediante «Ver más».</span><a href="#contacto">¿Hablamos de un proyecto? ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section skills" id="habilidades" aria-labelledby="skillsTitle">
+      <div class="container">
+        <div class="section-header reveal"><div class="section-index"><span>03 /</span> MI CAJA DE HERRAMIENTAS</div><h2 id="skillsTitle">Tecnologías que <span class="text-gradient">pongo en práctica.</span></h2><p class="section-header__subtitle">Estas son herramientas que he utilizado en proyectos y prácticas académicas; sigo ampliando mis conocimientos todos los días.</p></div>
+        <div class="skills__grid">
+          <div class="skill-group reveal"><div class="skill-group__heading"><span class="skill-group__icon">&lt;/&gt;</span><div><span class="skill-group__number">01</span><h3>Frontend & UI</h3></div></div><p>Construcción de interfaces y experiencias web.</p><div class="skill-pills"><span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Bootstrap</span><span>React Router</span><span>Responsive Design</span><span>PWA</span></div></div>
+          <div class="skill-group reveal"><div class="skill-group__heading"><span class="skill-group__icon">{ }</span><div><span class="skill-group__number">02</span><h3>Backend & lógica</h3></div></div><p>Servicios, integraciones y lógica de aplicaciones.</p><div class="skill-pills"><span>Node.js</span><span>Express.js</span><span>PHP</span><span>Python</span><span>Java</span><span>APIs REST</span><span>Firebase Auth</span><span>JWT</span><span>Integración de IA / APIs</span></div></div>
+          <div class="skill-group reveal"><div class="skill-group__heading"><span class="skill-group__icon">⌘</span><div><span class="skill-group__number">03</span><h3>Bases de datos</h3></div></div><p>Modelado, consultas y almacenamiento SQL / NoSQL.</p><div class="skill-pills"><span>MySQL</span><span>SQL Server</span><span>MongoDB</span><span>Cloud Firestore</span><span>Cassandra</span><span>Neo4j</span><span>SQL</span><span>CQL</span></div></div>
+          <div class="skill-group reveal"><div class="skill-group__heading"><span class="skill-group__icon">↗</span><div><span class="skill-group__number">04</span><h3>Herramientas & más</h3></div></div><p>Versionado, despliegue, desarrollo y prototipado.</p><div class="skill-pills"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Vercel</span><span>Render</span><span>Firebase Hosting</span><span>Laragon</span><span>phpMyAdmin</span><span>Arduino</span><span>ESP32</span><span>PlatformIO</span></div></div>
+        </div>
+        <p class="skills__note reveal">No creo en mostrar porcentajes inventados de dominio. Prefiero que el código y los proyectos demuestren lo que voy aprendiendo.</p>
+      </div>
+    </section>
+
+    <!-- Recursos compartidos: cada enlace se gestiona en el arreglo recursosCompartidos de main.js -->
+    <section class="section resources" id="recursos" aria-labelledby="resourcesTitle">
+      <div class="container">
+        <div class="section-header section-header--split reveal">
+          <div><div class="section-index"><span>04 /</span> MI BIBLIOTECA DIGITAL</div><h2 id="resourcesTitle">Recursos para <span class="text-gradient">seguir aprendiendo.</span></h2></div>
+          <p>Un espacio para compartir documentación, libros, cursos y herramientas útiles para quienes también están aprendiendo a desarrollar.</p>
+        </div>
+        <div class="resources__toolbar reveal">
+          <div class="resource-filters" id="resourceFilters" role="group" aria-label="Filtrar recursos"></div>
+          <span class="resources__count" id="resourceCount" aria-live="polite"></span>
+        </div>
+        <div class="resources__grid" id="resourcesGrid"></div>
+        <noscript><p>Habilita JavaScript para explorar los recursos de esta sección.</p></noscript>
+        <div class="resources__footer reveal"><span class="resources__sparkle" aria-hidden="true">✳</span><div><strong>Una colección en crecimiento.</strong><p>En esta sección iré reuniendo materiales de estudio, documentación y recursos que vale la pena compartir.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto" aria-labelledby="contactTitle">
+      <div class="container"><div class="contact__panel reveal"><div class="contact__glow" aria-hidden="true"></div><div class="section-index"><span>05 /</span> SIGUIENTE PASO</div><div class="contact__content"><div><h2 id="contactTitle">¿Tienes una idea?<br><span>Hagámosla realidad.</span></h2><p>Estoy abierto a colaborar, aprender y participar en proyectos interesantes. Si quieres conversar sobre desarrollo o tecnología, escríbeme.</p><div class="contact__actions"><a class="button button--primary" href="https://wa.me/522941055499" target="_blank" rel="noopener noreferrer">Escribirme por WhatsApp <span aria-hidden="true">↗</span></a><a class="button button--outline" href="mailto:JuanECC2005@icloud.com?subject=Hola%20Juan%2C%20hablemos%20de%20un%20proyecto">Enviar correo <span aria-hidden="true">↗</span></a></div></div><div class="contact__details"><span class="contact__small">ENCUÉNTRAME AQUÍ</span><a href="https://wa.me/522941055499" target="_blank" rel="noopener noreferrer">WhatsApp · 294 105 54 99 ↗</a><a href="mailto:JuanECC2005@icloud.com">JuanECC2005@icloud.com ↗</a><a href="https://github.com/JuanECC" target="_blank" rel="noopener noreferrer">github.com/JuanECC ↗</a><a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div><span class="contact__watermark" aria-hidden="true">JE.</span></div></div>
+    </section>
+  </main>
+
+  <!-- Ventana de proyecto: el contenido y las rutas de las 3 imágenes están en main.js -->
+  <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle" aria-describedby="dialogIntro">
+    <div class="project-dialog__shell">
+      <div class="project-dialog__topbar"><span><span class="status-dot" aria-hidden="true"></span> CASO DE ESTUDIO / PORTAFOLIO</span><button type="button" class="project-dialog__close" id="dialogClose" aria-label="Cerrar detalles del proyecto">✕</button></div>
+      <div class="project-dialog__content">
+        <div class="project-dialog__eyebrow" id="dialogCategory"></div>
+        <h2 id="dialogTitle"></h2>
+        <p class="project-dialog__intro" id="dialogIntro"></p>
+        <div class="project-dialog__details">
+          <div><h3>¿Qué resuelve?</h3><p id="dialogProblem"></p></div>
+          <div><h3>Principales funciones</h3><ul id="dialogFeatures"></ul></div>
+        </div>
+        <div class="project-dialog__stack"><h3>Tecnologías utilizadas</h3><div class="tags" id="dialogStack"></div></div>
+        <div class="project-dialog__gallery-header"><div><h3>Galería del proyecto</h3><p>Espacios para tres capturas reales de la aplicación.</p></div><span class="project-dialog__gallery-counter">03 / IMÁGENES</span></div>
+        <div class="project-dialog__gallery" id="dialogGallery"></div>
+        <div class="project-dialog__bottom"><span>Diseño, desarrollo y aprendizaje en cada proyecto.</span><button type="button" class="project-dialog__back" id="dialogBottomClose">← Volver al portafolio</button></div>
+      </div>
     </div>
+  </dialog>
 
-    <script src="./src/js/main.js"></script>
+  <footer class="site-footer"><div class="container footer__main"><a href="#inicio" class="footer__brand" aria-label="Volver al inicio">JE<span>.</span></a><span>Diseñado y desarrollado por Juan Elías Corona Cuevas.</span><a href="#inicio" class="back-top">Volver arriba ↑</a></div><div class="container footer__bottom"><span>© <span id="currentYear">2026</span> Juan Elías. Hecho con HTML, CSS y JavaScript.</span><span>HECHO EN MÉXICO <span aria-hidden="true">✳</span></span></div></footer>
 </body>
 </html>

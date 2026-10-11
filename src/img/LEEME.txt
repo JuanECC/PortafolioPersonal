@@ -1,0 +1,13 @@
+Coloca aquí estas fotografías/capturas con nombres exactos:
+yo.jpg
+miturno-1.jpg
+miturno-2.jpg
+miturno-3.jpg
+pos-1.jpg
+pos-2.jpg
+pos-3.jpg
+split-1.jpg
+split-2.jpg
+split-3.jpg
+
+Si usas otros formatos (.png/.webp), cambia la extensión de la ruta en index.html o main.js.

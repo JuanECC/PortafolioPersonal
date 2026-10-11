@@ -1,0 +1,3 @@
+Aquí puedes guardar tus recursos descargables, por ejemplo PDFs propios o que tengas derecho a compartir.
+Luego añade su ruta en recursosCompartidos de main.js:
+url: './src/recursos/nombre.pdf'
