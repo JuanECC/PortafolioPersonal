@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Elias Corona Cuevas | Desarrollador Frontend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Portafolio de Juan Elias Corona Cuevas - Desarrollador Frontend especializado en interfaces web modernas y responsivas">
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <header class="site-header" id="top">
+        <nav class="navbar container" aria-label="Navegación principal">
+            <a href="#inicio" class="navbar__logo" aria-label="Ir a inicio">
+                <img src="./src/img/logo.png" alt="Logo de Juan Elias">
+                <span>Juan</span>
+                <span class="brand-dot">Elias</span>
+            </a>
+            
+            <div class="nav__actions">
+                <ul class="nav__menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <!-- Botón para cambiar tema -->
+                <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <a href="#contacto" class="nav__cta">
+                    <i class="fas fa-paper-plane"></i>
+                    Hablemos
+                </a>
+
+                <button class="nav__toggle" id="navToggle"
+                    aria-expanded="false" aria-controls="mobilePanel"
+                    aria-label="Abrir menú">
+                    <span class="sr-only">Abrir menú</span>
+                    <span class="burger" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="nav__panel" id="mobilePanel" hidden>
+                <ul class="nav__panelList">
+                    <li><a href="#inicio" class="panel-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="panel-link">Sobre mí</a></li>
+                    <li><a href="#proyectos" class="panel-link">Proyectos</a></li>
+                    <li><a href="#contacto" class="panel-link">Contacto</a></li>
+                    <li class="panel-divider"></li>
+                    <li><button id="themeToggleMobile" class="panel-theme-toggle">
+                        <i class="fas fa-moon"></i> Modo claro
+                    </button></li>
+                    <li><a class="panel-cta" href="#contacto">Hablemos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <!-- HERO SECTION -->
+        <section id="inicio" class="hero">
+            <div class="hero__content container">
+                <div class="hero__text">
+                    <h1>Hola, soy <span class="highlight">Juan Elias</span></h1>
+                    <p class="hero__subtitle">Desarrollador Frontend especializado en crear interfaces web <span class="highlight-text">modernas, responsivas y accesibles</span></p>
+                    <div class="hero__buttons">
+                        <a href="#proyectos" class="btn btn-primary">
+                            <i class="fas fa-code"></i> Ver proyectos
+                        </a>
+                        <a href="#contacto" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Contáctame
+                        </a>
+                    </div>
+                    <div class="hero__social">
+                        <a href="https://github.com/JuanECC" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:gatospro2000@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <!-- Aquí iría tu foto -->
+                    <div class="profile-image">
+                        <div class="profile-image__wrapper">
+                            <img src="./src/img/yo.jpg" alt="Foto de Juan Elias Corona Cuevas" class="profile-photo">
+                            <div class="profile-badge">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <a href="#sobre-mi" aria-label="Ir a la siguiente sección">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ SECTION -->
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2>Sobre <span class="highlight">mí</span></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>¡Hola! Soy <strong>Juan Elias Corona Cuevas</strong>, desarrollador frontend con pasión por crear experiencias web que sean tanto hermosas como funcionales.</p>
+                        
+                        <p>Mi viaje en el desarrollo web comenzó con la curiosidad por entender cómo funcionan los sitios web que uso todos los días. Desde entonces, me he sumergido en el mundo del código, aprendiendo constantemente y mejorando mis habilidades.</p>
+                        
+                        <p>Me encanta transformar ideas en interfaces interactivas que no solo se vean bien, sino que también sean intuitivas y accesibles para todos los usuarios.</p>
+                        
+                        <div class="skills-preview">
+                            <h3>Habilidades principales:</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Responsive Design</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                        </div>
+                        
+                        <a href="./src/assets/cv-juan-elias.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS SECTION -->
+        <section id="proyectos" class="section projects">
+            <div class="container">
+                <h2>Mis <span class="highlight">proyectos</span></h2>
+                <p class="section-subtitle">Algunos de los proyectos en los que he trabajado</p>
+                
+                <div class="projects-grid">
+                    <!-- Proyecto 1: Portafolio Web -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/proyecto1.jpg" alt="Captura del portafolio web">
+                        </div>
+                        <div class="project-content">
+                            <h3>Portafolio Web Personal</h3>
+                            <p>Mi propio portafolio web desarrollado con HTML5, CSS3 y JavaScript. Diseño completamente responsivo y accesible.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://juanecc.github.io/Proyecto_Final1/" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Ver en vivo
+                                </a>
+                                <a href="https://github.com/JuanECC/Proyecto_Final1" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 2: App MiTurno -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/proyecto2.jpg" alt="Captura de la app MiTurno">
+                        </div>
+                        <div class="project-content">
+                            <h3>App MiTurno (Triage)</h3>
+                            <p>Aplicación web para gestión de turnos basada en sistema de triage. Desarrollada como parte de un proyecto académico.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://juanecc.github.io/miturno/" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Ver demo
+                                </a>
+                                <a href="https://github.com/JuanECC/miturno" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 3: Próximo proyecto -->
+                    <div class="project-card">
+                        <div class="project-image coming-soon">
+                            <div class="coming-soon-text">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Próximamente</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Nuevo Proyecto</h3>
+                            <p>Actualmente trabajando en un nuevo proyecto que combinará mis habilidades en desarrollo frontend con nuevas tecnologías.</p>
+                            <div class="project-tech">
+                                <span>En desarrollo</span>
+                                <span>Próximamente</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="project-link disabled" disabled>
+                                    <i class="fas fa-clock"></i> En proceso
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO SECTION -->
+        <section id="contacto" class="section contact">
+            <div class="container">
+                <h2>Contácta<span class="highlight">me</span></h2>
+                <p class="section-subtitle">¿Tienes un proyecto o idea? ¡Hablemos sobre ello!</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>JuanECC2005@icloud.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Ubicación</h3>
+                                <p>México</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h3>Conéctate conmigo</h3>
+                            <div class="social-icons">
+                                <a href="https://github.com/JuanECCC" target="_blank" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="http://x.com/JECC_05" target="_blank" class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                </a>
+                                <a href="https://wa.me/2941055499" target="_blank" class="social-icon" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                        </button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="terminos">
+        <div class="container">
+            <div class="footer__cols">
+                <div>
+                    <h3>Juan.ECC</h3>
+                    <p>Desarrollador web frontend</p>
+                </div>
+
+                <div>
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre mí</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terminos">Términos y condiciones</a></li>
+                        <li><a href="#privacidad">Política de privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Sígueme</h4>
+                    <ul>
+                        <li><a href="https://github.com/JuanECC" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/juan-el%C3%ADas-corona-cuevas-3b5170398/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/juan_ecc05/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <small>&copy; 2025 Juan Elias. Todos los derechos reservados.</small>
+            <small class="footer-credit">Hecho con <i class="fas fa-heart"></i> y código</small>
+        </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookie-banner">
+        <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario.
+            <a href="#privacidad">Más información</a>
+        </p>
+        <button id="cookieBtn" class="btn btn-small">Aceptar</button>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
